@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .header_top_icon_wrapper {
+    @apply bg-gray-200 rounded-md p-2 cursor-pointer hover:bg-yellow-500 hover:text-white;
+  }
+
+  .navbar__link {
+    color: #ff8f9c;
+    transition: all 0.4s;
+    position: relative; /* Required for positioning the ::after pseudo-element */
+  }
+  
+  .navbar__link::after {
+    position: absolute;
+    content: "";
+    background-color: #ff8f9c;
+    height: 3px;
+    width: 100%;
+    bottom: -5px;
+    left: 0;
+    scale: 0;
+    transform-origin: left;
+    transition: all 0.4s;
+  }
+  
+  .navbar__link:hover::after {
+    scale: 1;
+    background-color: #ffcc00; /* Vibrant yellow */
+  }
+}  
